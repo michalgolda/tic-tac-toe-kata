@@ -15,8 +15,7 @@ function setFieldPlayer(fieldElement, player) {
     fieldElement.innerHTML = "";
     fieldElement.dataset.player = player;
 
-    const playerIsCross = player === "cross";
-    playerIsCross && (
+    player === "cross" && (
         fieldElement.innerHTML = `
             <span class="material-icons">
                 close
@@ -24,8 +23,7 @@ function setFieldPlayer(fieldElement, player) {
         `
     );
 
-    const playerIsCircle = player === "circle";
-    playerIsCircle && (
+    player === "circle" && (
         fieldElement.innerHTML = `
             <span class="material-icons">
                 panorama_fish_eye
@@ -35,13 +33,9 @@ function setFieldPlayer(fieldElement, player) {
 }
 
 function setNextPlayer() {
-    currentPlayer === "circle" ? (
-        currentPlayer = "cross"
-    ) : (
-        currentPlayer = "circle"
-    )
-
     playersMoveCount++;
+
+    currentPlayer = currentPlayer === "circle" ? "cross" : "circle";
 }
 
 function checkWinner() {
