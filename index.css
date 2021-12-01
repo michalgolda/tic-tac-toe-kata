@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1faee;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#verdict {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+#verdict p {
+    color: #1d3557;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#verdict button {
+    border: none;
+    padding: 16px;
+    color: #1d3557;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 16px;
+    font-weight: bold;
+    border-radius: 2px;
+    background-color: #a8dadc;
+}
+
+.board {
+    display: grid;
+    grid-template-rows: 200px 4px 200px 4px 200px;
+    grid-template-columns: 200px 4px 200px 4px 200px;
+}
+
+.boardField {
+    display: flex;
+    color: #1d3557;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardField span {
+    user-select: none;
+    pointer-events: none;
+}
+
+.boardField[data-player="cross"] span {
+    color: #a8dadc;
+    font-size: 128px;
+}
+
+.boardField[data-player="circle"] span {
+    color: #457b9d;
+    font-size: 113px;
+}
+
+.boardFieldSeparator {
+    width: 100%;
+    height: 100%;
+    background-color: #1d3557;
+}
